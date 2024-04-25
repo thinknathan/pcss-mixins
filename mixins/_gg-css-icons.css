@@ -1,7 +1,7 @@
 /** Mixins | https://github.com/thinknathan/pcss-mixins/ */
 /** css.gg v2.1.1 | MIT License Copyright (c) 2019 css.gg | https://github.com/astrit/css.gg */
 
-/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable no-duplicate-selectors, declaration-block-no-shorthand-property-overrides */
 
 @define-mixin gg-css-abstract {
 	box-sizing: border-box;

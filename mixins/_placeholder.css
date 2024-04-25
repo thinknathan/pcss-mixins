@@ -1,0 +1,176 @@
+/** Mixins | https://github.com/thinknathan/pcss-mixins/ */
+
+/**
+ * Placeholder loading
+ * @link https://zalog.github.io/placeholder-loading
+ * @license MIT
+ *
+ * Example Usage:
+ * <div class="placeholder">
+    <div class="placeholder__inner placeholder__col-12">
+      <div class="placeholder__picture"></div>
+      <div class="placeholder__row">
+        <div class="placeholder__col placeholder__col--6 placeholder__col--big"></div>
+        <div class="placeholder__col placeholder__col--4 placeholder__col--empty placeholder__col--big"></div>
+        <div class="placeholder__col placeholder__col--2 placeholder__col--big"></div>
+        <div class="placeholder__col placeholder__col--4"></div>
+        <div class="placeholder__col placeholder__col--8 placeholder__col--empty"></div>
+        <div class="placeholder__col placeholder__col--6"></div>
+        <div class="placeholder__col placeholder__col--6 placeholder__col--empty"></div>
+        <div class="placeholder__col placeholder__col--12"></div>
+      </div>
+    </div>
+  </div>
+ *
+ */
+
+@define-mixin placeholder $selector {
+	:root {
+		--pm-ph-bg: #fff;
+		--pm-ph-color: #ced4da;
+		--pm-ph-border-radius: 2px;
+
+		--pm-ph-gutter: 1rem;
+		--pm-ph-spacer: 1rem;
+
+		--pm-ph-avatar-border-radius: 50%;
+
+		--pm-ph-animation-duration: 0.8s;
+	}
+
+	$(selector) {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		overflow: hidden;
+		margin-bottom: var(--pm-ph-gutter);
+		background-color: var(--pm-ph-bg);
+		border-radius: var(--pm-ph-border-radius);
+
+		&::before {
+			content: ' ';
+			position: absolute;
+			inset: 0 0 0 50%;
+			z-index: 1;
+			width: 500%;
+			margin-left: -250%;
+			animation: phAnimation --pm-ph-animation-duration linear infinite;
+			background: linear-gradient(
+					to right,
+					color-mix(in srgb, var(--pm-ph-bg) 0%, transparent) 46%,
+					color-mix(in srgb, var(--pm-ph-bg) 35%, transparent) 50%,
+					color-mix(in srgb, var(--pm-ph-bg) 0%, transparent) 54%
+				)
+				50% 50%;
+		}
+
+		&__inner {
+			flex: 1 1 auto;
+			display: flex;
+			flex-flow: column;
+		}
+
+		&__row {
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: calc(var(--pm-ph-spacer) * 0.5);
+		}
+
+		&__col {
+			height: 10px;
+			margin-bottom: calc(var(--pm-ph-spacer) * 0.5);
+			background-color: var(--pm-ph-color);
+
+			&--big {
+				height: 20px;
+				margin-bottom: var(--pm-ph-spacer);
+			}
+
+			&--empty {
+				background-color: color-mix(in srgb, var(--pm-ph-bg) 0%, transparent);
+			}
+
+			&--2 {
+				flex: 0 0 calc(calc(2 / 12) * 10 * 100%);
+			}
+
+			&--4 {
+				flex: 0 0 calc(calc(4 / 12) * 10 * 100%);
+			}
+
+			&--6 {
+				flex: 0 0 calc(calc(6 / 12) * 10 * 100%);
+			}
+
+			&--8 {
+				flex: 0 0 calc(calc(8 / 12) * 10 * 100%);
+			}
+
+			&--10 {
+				flex: 0 0 calc(calc(10 / 12) * 10 * 100%);
+			}
+
+			&--12 {
+				flex: 0 0 calc(calc(12 / 12) * 10 * 100%);
+			}
+		}
+
+		&__avatar {
+			position: relative;
+			width: 100%;
+			min-width: 60px;
+			background-color: var(--pm-ph-color);
+			margin-bottom: var(--pm-ph-spacer);
+			border-radius: var(--pm-ph-avatar-border-radius);
+			overflow: hidden;
+
+			&::before {
+				content: ' ';
+				display: block;
+				padding-top: 100%;
+			}
+		}
+
+		&__picture {
+			width: 100%;
+			height: 120px;
+			background-color: var(--pm-ph-color);
+			margin-bottom: var(--pm-ph-spacer);
+		}
+	}
+
+	@keyframes phAnimation {
+		0% {
+			transform: translate3d(-30%, 0, 0);
+		}
+
+		100% {
+			transform: translate3d(30%, 0, 0);
+		}
+	}
+}
+
+/*
+ * Copyright (c) 2018 Catalin Zalog
+ * 
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the "Software"), to deal in the Software without
+ * restriction, including without limitation the rights to use,
+ * copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following
+ * conditions:
+ * 
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ */

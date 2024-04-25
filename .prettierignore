@@ -1,0 +1,4 @@
+*.svg
+.git
+node_modules
+yarn.lock

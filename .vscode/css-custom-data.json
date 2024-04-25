@@ -1,0 +1,8 @@
+{
+	"version": 1.1,
+	"atDirectives": [
+		{ "name": "@mixin", "description": "Use a PostCSS mixin" },
+		{ "name": "@define-mixin", "description": "Define a PostCSS mixin" },
+		{ "name": "@mixin-content", "description": "Contents of a PostCSS Mixin" }
+	]
+}

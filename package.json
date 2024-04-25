@@ -1,0 +1,22 @@
+{
+	"version": "0.0.1",
+	"name": "pcss-mixins",
+	"license": "CC0-1.0",
+	"scripts": {
+		"build-gg": "node ./src/bundle-lucide.mjs",
+		"build-l": "node ./src/bundle-gg.mjs",
+		"lint": "stylelint \"mixins/**/*.css\" --fix",
+		"prettier": "prettier \"./**/*.{yml,json,mjs,md,css}\" --write"
+	},
+	"main": "./mixins.css",
+	"style": "./mixins.css",
+	"devDependencies": {
+		"prettier": "^3.2.5",
+		"stylelint": "^16.3.1",
+		"stylelint-config-standard": "^36.0.0"
+	},
+	"peerDependencies": {
+		"postcss": "*",
+		"postcss-mixins": "*"
+	}
+}

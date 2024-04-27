@@ -6,6 +6,7 @@
 @import 'mixins/_lucide-icons';
 
 /* Other mixins */
+@import 'mixins/_divider';
 @import 'mixins/_lazyload';
 @import 'mixins/_placeholder';
 @import 'mixins/_ripple';

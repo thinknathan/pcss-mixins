@@ -1,0 +1,351 @@
+/** Mixins | https://github.com/thinknathan/pcss-mixins/ */
+
+/**
+* Creates visual dividers
+*/
+
+@define-mixin divider-position-top-inside {
+	top: 0;
+}
+@define-mixin divider-position-bottom-inside {
+	bottom: 0;
+}
+@define-mixin divider-position-top-outside $divider-height: 1rem {
+	top: calc($(divider-height) * -1);
+}
+@define-mixin divider-position-bottom-outside $divider-height: 1rem {
+	bottom: calc($(divider-height) * -1);
+}
+
+/* Forward */
+@define-mixin divider-forward-top $divider-height: 1rem, $divider-bg: white {
+	position: relative;
+	&::before {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		width: 100%;
+		height: $(divider-height);
+		left: 0;
+		background-image: linear-gradient(
+			to right bottom,
+			transparent 48%,
+			$(divider-bg) 50%
+		);
+	}
+}
+@define-mixin divider-forward-bottom $divider-height: 1rem, $divider-bg: white {
+	position: relative;
+	&::before {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		width: 100%;
+		height: $(divider-height);
+		left: 0;
+		background-image: linear-gradient(
+			to right bottom,
+			$(divider-bg) 50%,
+			transparent 52%
+		);
+	}
+}
+
+/* Back */
+@define-mixin divider-back-top $divider-height: 1rem, $divider-bg: white {
+	position: relative;
+	&::before {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		width: 100%;
+		height: $(divider-height);
+		left: 0;
+		background-image: linear-gradient(
+			to right top,
+			$(divider-bg) 48%,
+			transparent 50%
+		);
+	}
+}
+@define-mixin divider-back-bottom $divider-height: 1rem, $divider-bg: white {
+	position: relative;
+	&::before {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		width: 100%;
+		height: $(divider-height);
+		left: 0;
+		background-image: linear-gradient(
+			to right top,
+			transparent 48%,
+			$(divider-bg) 50%
+		);
+	}
+}
+
+/* Peak */
+@define-mixin divider-peak-top $divider-height: 1rem, $divider-bg: white {
+	position: relative;
+	&::before {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		width: 100%;
+		height: $(divider-height);
+		left: 0;
+		background-image: linear-gradient(
+			to right bottom,
+			transparent 52%,
+			$(divider-bg) 50%
+		);
+	}
+	&::after {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		left: 50%;
+		width: 50%;
+		height: $(divider-height);
+		background-image: linear-gradient(
+			to left bottom,
+			transparent 52%,
+			$(divider-bg) 50%
+		);
+	}
+}
+@define-mixin divider-peak-bottom $divider-height: 1rem, $divider-bg: white {
+	position: relative;
+	&::before {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		width: 100%;
+		height: $(divider-height);
+		left: 0;
+		background-image: linear-gradient(
+			to right top,
+			transparent 48%,
+			$(divider-bg) 50%
+		);
+	}
+	&::after {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		left: 50%;
+		width: 50%;
+		height: $(divider-height);
+		background-image: linear-gradient(
+			to left top,
+			transparent 48%,
+			$(divider-bg) 50%
+		);
+	}
+}
+
+/* Valley */
+@define-mixin divider-valley-top $divider-height: 1rem, $divider-bg: white {
+	position: relative;
+	&::before {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		width: 100%;
+		height: $(divider-height);
+		left: 0;
+		background-image: linear-gradient(
+				to right bottom,
+				transparent 75%,
+				$(divider-bg) 77%
+			),
+			linear-gradient(to left bottom, transparent 75%, $(divider-bg) 77%);
+	}
+}
+@define-mixin divider-valley-bottom $divider-height: 1rem, $divider-bg: white {
+	position: relative;
+	&::before {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		width: 100%;
+		height: $(divider-height);
+		left: 0;
+		background-image: linear-gradient(
+				to right top,
+				transparent 73%,
+				$(divider-bg) 75%
+			),
+			linear-gradient(to left top, transparent 73%, $(divider-bg) 75%);
+	}
+}
+
+/* Split */
+@define-mixin divider-split-top $divider-height: 1rem, $divider-bg: white {
+	position: relative;
+	&::before {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		height: $(divider-height);
+		width: 50%;
+		background-color: $(divider-bg);
+		border-radius: 0 $(divider-height) 0 0;
+	}
+	&::after {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		left: 50%;
+		width: 50%;
+		height: $(divider-height);
+		background-color: $(divider-bg);
+		border-radius: $(divider-height) 0 0 0;
+	}
+}
+@define-mixin divider-split-bottom $divider-height: 1rem, $divider-bg: white {
+	position: relative;
+	&::before {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		height: $(divider-height);
+		width: 50%;
+		background-color: $(divider-bg);
+		border-radius: 0 0 $(divider-height) 0;
+	}
+	&::after {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		left: 50%;
+		width: 50%;
+		height: $(divider-height);
+		background-color: $(divider-bg);
+		border-radius: 0 0 0 $(divider-height);
+	}
+}
+
+/* Round */
+@define-mixin divider-round-top $divider-height: 1rem, $divider-bg: white {
+	position: relative;
+	&::before {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		width: 100%;
+		height: $(divider-height);
+		left: 0;
+		background-color: $(divider-bg);
+		border-radius: 50% 50% 0 0;
+	}
+}
+@define-mixin divider-round-bottom $divider-height: 1rem, $divider-bg: white {
+	position: relative;
+	&::before {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		width: 100%;
+		height: $(divider-height);
+		left: 0;
+		background-color: $(divider-bg);
+		border-radius: 0 0 50% 50%;
+	}
+}
+
+/* Serrated */
+@define-mixin divider-serrated-top $divider-height: 1rem, $divider-bg: white {
+	position: relative;
+	&::before {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		width: 100%;
+		height: $(divider-height);
+		left: 0;
+		background-repeat: repeat-x;
+		background-size: $(divider-height) $(divider-height);
+		background-image: linear-gradient(
+				-45deg,
+				$(divider-bg) calc($(divider-height) * 0.5),
+				transparent 0
+			),
+			linear-gradient(
+				45deg,
+				$(divider-bg) calc($(divider-height) * 0.5),
+				transparent 0
+			);
+		background-position: left bottom;
+	}
+}
+@define-mixin divider-serrated-bottom $divider-height: 1rem, $divider-bg: white {
+	position: relative;
+	&::before {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		width: 100%;
+		height: $(divider-height);
+		left: 0;
+		background-repeat: repeat-x;
+		background-size: $(divider-height) $(divider-height);
+		background-image: linear-gradient(
+				-45deg,
+				transparent $(divider-height),
+				$(divider-bg) 0
+			),
+			linear-gradient(45deg, transparent $(divider-height), $(divider-bg) 0);
+		background-position: left top;
+	}
+}
+
+/* Wave */
+@define-mixin divider-wave-top $divider-height: 1rem, $divider-bg: white {
+	position: relative;
+	&::before {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		width: 100%;
+		height: $(divider-height);
+		left: 0;
+		background-size: 100% $(divider-height);
+		background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M100,30 Q70,40 50,30 T0,30 v20 h100Z" style="fill:$(divider-bg);"/></svg>');
+	}
+}
+@define-mixin divider-wave-bottom $divider-height: 1rem, $divider-bg: white {
+	position: relative;
+	&::before {
+		position: absolute;
+		content: '';
+		z-index: 0;
+		pointer-events: none;
+		width: 100%;
+		height: $(divider-height);
+		left: 0;
+		background-size: 100% $(divider-height);
+		background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50" preserveAspectRatio="none"><path d="M100,30 Q70,40 50,30 T0,30 v20 h100Z" style="fill:$(divider-bg);"/></svg>');
+		transform: rotate(180deg);
+	}
+}

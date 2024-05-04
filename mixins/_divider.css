@@ -5,16 +5,28 @@
 */
 
 @define-mixin divider-position-top-inside {
-	top: 0;
+	&::before,
+	&::after {
+		top: 0;
+	}
 }
 @define-mixin divider-position-bottom-inside {
-	bottom: 0;
+	&::before,
+	&::after {
+		bottom: 0;
+	}
 }
 @define-mixin divider-position-top-outside $divider-height: 1rem {
-	top: calc($(divider-height) * -1);
+	&::before,
+	&::after {
+		top: calc($(divider-height) * -1);
+	}
 }
 @define-mixin divider-position-bottom-outside $divider-height: 1rem {
-	bottom: calc($(divider-height) * -1);
+	&::before,
+	&::after {
+		bottom: calc($(divider-height) * -1);
+	}
 }
 
 /* Forward */

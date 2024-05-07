@@ -1,6 +1,16 @@
 {
-	"version": "0.1.1",
+	"version": "1.0.0",
 	"name": "pcss-mixins",
+	"description": "Various mixins for use with postcss-mixins",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/thinknathan/pcss-mixins.git"
+	},
+	"files": [
+		"LICENSE-INFO.md",
+		"mixins.css",
+		"mixins"
+	],
 	"license": "SEE LICENSE IN LICENSE-INFO.md",
 	"scripts": {
 		"build-gg": "node ./src/bundle-lucide.mjs",

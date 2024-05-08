@@ -13157,22 +13157,24 @@
 	}
 }
 
-@keyframes loadbaralt {
-	0%,
-	100% {
-		left: 0;
-		right: 80%;
-	}
+@define-mixin gg-css-loadbar-alt-animation {
+	@keyframes loadbaralt {
+		0%,
+		100% {
+			left: 0;
+			right: 80%;
+		}
 
-	25%,
-	75% {
-		left: 0;
-		right: 0;
-	}
+		25%,
+		75% {
+			left: 0;
+			right: 0;
+		}
 
-	50% {
-		left: 80%;
-		right: 0;
+		50% {
+			left: 80%;
+			right: 0;
+		}
 	}
 }
 
@@ -13216,14 +13218,16 @@
 	}
 }
 
-@keyframes gg-doc {
-	0% {
-		left: -16px;
-	}
+@define-mixin gg-css-loadbar-doc-animation {
+	@keyframes gg-doc {
+		0% {
+			left: -16px;
+		}
 
-	60%,
-	100% {
-		left: 0;
+		60%,
+		100% {
+			left: 0;
+		}
 	}
 }
 
@@ -13267,25 +13271,27 @@
 	}
 }
 
-@keyframes gg-bar {
-	10% {
-		box-shadow: inset 0 -4px 0;
-	}
+@define-mixin gg-css-loadbar-sound-animation {
+	@keyframes gg-bar {
+		10% {
+			box-shadow: inset 0 -4px 0;
+		}
 
-	30% {
-		box-shadow: inset 0 -10px 0;
-	}
+		30% {
+			box-shadow: inset 0 -10px 0;
+		}
 
-	60% {
-		box-shadow: inset 0 -6px 0;
-	}
+		60% {
+			box-shadow: inset 0 -6px 0;
+		}
 
-	80% {
-		box-shadow: inset 0 -8px 0;
-	}
+		80% {
+			box-shadow: inset 0 -8px 0;
+		}
 
-	100% {
-		box-shadow: inset 0 -2px 0;
+		100% {
+			box-shadow: inset 0 -2px 0;
+		}
 	}
 }
 
@@ -13330,22 +13336,24 @@
 	}
 }
 
-@keyframes loadbar {
-	0%,
-	100% {
-		left: 0;
-		right: 80%;
-	}
+@define-mixin gg-css-loadbar-animation {
+	@keyframes loadbar {
+		0%,
+		100% {
+			left: 0;
+			right: 80%;
+		}
 
-	25%,
-	75% {
-		left: 0;
-		right: 0;
-	}
+		25%,
+		75% {
+			left: 0;
+			right: 0;
+		}
 
-	50% {
-		left: 80%;
-		right: 0;
+		50% {
+			left: 80%;
+			right: 0;
+		}
 	}
 }
 
@@ -21327,13 +21335,15 @@
 	}
 }
 
-@keyframes spinneralt {
-	0% {
-		transform: rotate(0deg);
-	}
+@define-mixin gg-css-spinner-alt-animation {
+	@keyframes spinneralt {
+		0% {
+			transform: rotate(0deg);
+		}
 
-	100% {
-		transform: rotate(359deg);
+		100% {
+			transform: rotate(359deg);
+		}
 	}
 }
 
@@ -21359,13 +21369,15 @@
 	}
 }
 
-@keyframes spinner-two-alt {
-	0% {
-		transform: rotate(0deg);
-	}
+@define-mixin gg-css-spinner-two-alt-animation {
+	@keyframes spinner-two-alt {
+		0% {
+			transform: rotate(0deg);
+		}
 
-	100% {
-		transform: rotate(359deg);
+		100% {
+			transform: rotate(359deg);
+		}
 	}
 }
 
@@ -21393,13 +21405,15 @@
 	position: relative;
 }
 
-@keyframes spinner-two {
-	0% {
-		transform: rotate(0deg);
-	}
+@define-mixin gg-css-spinner-two-animation {
+	@keyframes spinner-two {
+		0% {
+			transform: rotate(0deg);
+		}
 
-	100% {
-		transform: rotate(359deg);
+		100% {
+			transform: rotate(359deg);
+		}
 	}
 }
 
@@ -21479,13 +21493,15 @@
 	}
 }
 
-@keyframes spinner {
-	0% {
-		transform: rotate(0deg);
-	}
+@define-mixin gg-css-spinner-animation {
+	@keyframes spinner {
+		0% {
+			transform: rotate(0deg);
+		}
 
-	100% {
-		transform: rotate(359deg);
+		100% {
+			transform: rotate(359deg);
+		}
 	}
 }
 
